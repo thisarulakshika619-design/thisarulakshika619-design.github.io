@@ -3,111 +3,224 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ViDUEVA Labs - Official Website</title>
-    <!-- මෙතැනට අවශ්‍ය නම් Google Fonts හෝ CSS Style එකතු කරගත හැක -->
     <style>
-        /* CSS STYLES: මේ කොටසෙන් වෙබ් අඩවියේ පෙනුම (Design) සකස් කරයි */
+        /* ==========================================
+           1. GENERAL STYLES (සාමාන්‍ය නිර්මාණය)
+           ========================================== */
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f4f7f6;
+            background-color: #f9f9f9;
             color: #333;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
         }
+        
+        /* ==========================================
+           2. HEADER SECTION (උඩම කොටස සහ Cover Image)
+           ========================================== */
         header {
-            background: linear-gradient(135deg, #1e3c72, #2a5298);
+            background: linear-gradient(135deg, rgba(30, 60, 114, 0.95), rgba(42, 82, 152, 0.95)), 
+                        url('https://www.transparenttextures.com/patterns/cubes.png');
             color: white;
-            padding: 40px 20px;
+            padding: 60px 20px;
             text-align: center;
+            border-bottom: 5px solid #28a745; 
         }
+        
+        .logo-container img {
+            max-width: 150px; 
+            height: auto;
+            margin-bottom: 15px;
+        }
+        
         header h1 {
             margin: 0;
-            font-size: 2.5em;
+            font-size: 3em;
+            font-weight: 700;
+            letter-spacing: 1px;
         }
+        
         header p {
-            font-size: 1.2em;
+            font-size: 1.4em;
             opacity: 0.9;
+            margin-top: 10px;
+            font-weight: 300;
         }
+
+        /* ==========================================
+           3. PRODUCTS SECTION (නිෂ්පාදන පෙන්වන කොටස)
+           ========================================== */
         .container {
-            max-width: 900px;
+            max-width: 1000px;
             margin: 40px auto;
             padding: 0 20px;
+            flex: 1; 
         }
+        
         .section-title {
-            font-size: 1.8em;
+            font-size: 2em;
             color: #1e3c72;
-            border-bottom: 2px solid #ddd;
-            padding-bottom: 10px;
-            margin-bottom: 20px;
+            margin-bottom: 30px;
+            border-left: 5px solid #1e3c72;
+            padding-left: 15px;
         }
-        .app-card {
+        
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .product-card {
             background: white;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 6px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
             display: flex;
+            flex-direction: column;
             justify-content: space-between;
-            align-items: center;
-            margin-bottom: 20px;
         }
-        .app-info h3 {
+        
+        .product-card:hover {
+            transform: translateY(-5px); 
+        }
+        
+        .product-card h3 {
             margin: 0 0 10px 0;
             color: #2a5298;
+            font-size: 1.5em;
         }
-        .app-info p {
-            margin: 0;
+        
+        .product-card p {
+            margin: 0 0 20px 0;
             color: #666;
+            line-height: 1.6;
+            flex: 1; 
         }
+        
+        .badge-android {
+            background-color: #a4c639; 
+            color: white;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 0.8em;
+            font-weight: bold;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+            display: inline-block;
+        }
+
         .btn {
             background-color: #28a745;
             color: white;
-            padding: 10px 20px;
+            padding: 12px 20px;
             text-decoration: none;
             border-radius: 5px;
             font-weight: bold;
+            text-align: center;
+            display: block;
+            width: 100%;
+            box-sizing: border-box;
+            transition: background-color 0.3s;
         }
+        
         .btn:hover {
             background-color: #218838;
         }
+
+        /* ==========================================
+           4. FOOTER SECTION (යටම පේළිය)
+           ========================================== */
         footer {
             text-align: center;
-            padding: 20px;
+            padding: 25px;
             background-color: #333;
             color: white;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
+            font-size: 0.9em;
+            margin-top: auto;
+        }
+
+        @media (max-width: 600px) {
+            header { padding: 40px 20px; }
+            header h1 { font-size: 2em; }
+            header p { font-size: 1.1em; }
         }
     </style>
 </head>
 <body>
 
-    <!-- HEADER SECTION: වෙබ් අඩවියේ උඩම කොටස (ব্র্যান্ড නම සහ හැඳින්වීම) -->
+    <!-- ======================================================== -->
+    <!-- [CHANGE AREA 1]: HEADER & LOGO (ඔබේ ලාංඡනය වෙනස් කරන තැන) -->
+    <!-- ======================================================== -->
     <header>
+        <div class="logo-container">
+            <!-- 
+               * දැනට SVG අයිකන් එකක් දමා ඇත.
+               * ඔබට අනාගතයේදී රූපයක් (Logo image) දැමීමට අවශ්‍ය නම්, 
+                 පහත SVG කෝඩ් එක මකා දමා මෙලෙස ලියන්න:
+                 <img src="YOUR_LOGO_IMAGE_LINK.png" alt="ViDUEVA Labs Logo">
+            -->
+            <svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect width="100" height="100" rx="16" fill="white"/>
+                <path d="M25 70L50 25L75 70H60L50 52L40 70H25Z" fill="#1E3C72"/>
+                <path d="M55 62H45V70H55V62Z" fill="#28A745"/>
+            </svg>
+        </div>
         <h1>ViDUEVA Labs</h1>
-        <p>Creating smart, efficient, and user-friendly Android applications.</p>
+        <p>Crafting Digital Excellence</p>
     </header>
 
-    <!-- MAIN CONTENT CONTAINER -->
+
+    <!-- ======================================================== -->
+    <!-- [CHANGE AREA 2]: PRODUCTS/APPS LIST (ඇප්ස් එකතු කරන තැන) -->
+    <!-- ======================================================== -->
     <div class="container">
         
-        <!-- APPS SECTION: ඔයාගේ ඇප්ස් ලැයිස්තුව පෙන්වන තැන -->
-        <div class="section-title">Our Android Applications</div>
+        <div class="section-title">Our Products</div>
 
-        <!-- APP 1: Premium BMI Calculator -->
-        <div class="app-card">
-            <div class="app-info">
-                <h3>Premium BMI Calculator</h3>
-                <p>Calculate your Body Mass Index quickly and track your health accurately.</p>
+        <div class="product-grid">
+
+            <!-- --- PRODUCT 1: Premium BMI Calculator --- -->
+            <div class="product-card">
+                <div class="product-info">
+                    <span class="badge-android">Android App</span>
+                    <h3>Premium BMI Calculator</h3>
+                    <p>Calculate your Body Mass Index quickly, track history, and get health insights with our premium calculator.</p>
+                </div>
+                <!-- [CHANGE AREA 3]: Play Store Link එක දෙන තැන -->
+                <!-- href="#" වෙනුවට Play Store Link එක දමන්න (ഉദാ: href="https://play.google.com/store/apps/details?id=...") -->
+                <a href="#" class="btn" target="_blank">Download on Play Store</a>
             </div>
-            <!-- මෙතැනට Play Store Link එක දෙන්න පුළුවන් -->
-            <a href="#" class="btn" target="_blank">Download on Play Store</a>
-        </div>
 
-        <!-- [අනාථයේදී තව ඇප් එකක් දැමුවහොත්, උඩ App Card එක Copy කරලා මෙතැනට Paste කරන්න] -->
+
+            <!-- ======================================================== -->
+            <!-- [HOW TO ADD A NEW APP]:                                 -->
+            <!-- අනාගතයේදී අලුත් ඇප් එකක් දැමීමට අවශ්‍ය නම්, පහත කොටස Copy කර -->
+            <!-- මෙයට ඉහත කොටසට පහළින් Paste කරන්න:                        -->
+            <!-- ======================================================== -->
+            <!--
+            <div class="product-card">
+                <div class="product-info">
+                    <span class="badge-android">Android App</span>
+                    <h3>New App Name Here</h3>
+                    <p>Description of your new app goes here.</p>
+                </div>
+                <a href="YOUR_NEW_PLAY_STORE_LINK" class="btn" target="_blank">Download on Play Store</a>
+            </div>
+            -->
+
+        </div>
 
     </div>
 
-    <!-- FOOTER SECTION: යටම පේළිය -->
+
+    <!-- ======================================================== -->
+    <!-- [CHANGE AREA 4]: FOOTER (කොටු අඩියේ ඇති නම/වසර වෙනස් කිරීමට) -->
+    <!-- ======================================================== -->
     <footer>
         <p>&copy; 2026 ViDUEVA Labs. All rights reserved.</p>
     </footer>
