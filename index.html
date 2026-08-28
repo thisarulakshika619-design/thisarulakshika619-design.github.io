@@ -89,9 +89,11 @@
            ========================================== */
         .container {
             max-width: 900px;
-            margin: 30px auto;
-            padding: 0 20px;
+            margin: 25px auto;
+            padding: 0 15px; /* මොබයිල් එකේ දාරවලට නොඇලී ඉඩ තැබීමට */
             flex: 1; 
+            width: 100%;
+            box-sizing: border-box;
         }
         
         .section-box {
@@ -164,6 +166,30 @@
         }
         .btn:hover {
             background-color: #218838;
+        }
+        /* මොබයිල් ෆෝන් සඳහා විශේෂ හැඩතල (Mobile Responsive Fixes) */
+        @media (max-width: 600px) {
+            nav {
+                padding: 12px 15px;
+                justify-content: center;
+                flex-direction: column;
+                gap: 10px;
+            }
+            nav ul {
+                gap: 15px;
+            }
+            header {
+                padding: 40px 15px;
+            }
+            header h1 {
+                font-size: 1.4em;
+            }
+            .section-box {
+                padding: 20px 15px;
+            }
+            .section-title {
+                font-size: 1.4em;
+            }
         }
 
         /* ==========================================
