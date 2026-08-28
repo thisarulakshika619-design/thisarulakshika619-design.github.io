@@ -1,0 +1,160 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Support & Contact - ViDUEVA</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        nav {
+            background: #ffffff;
+            padding: 15px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .container {
+            max-width: 700px;
+            margin: 40px auto;
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            width: 90%;
+        }
+        .section-title {
+            font-size: 1.8em;
+            color: #1e3c72;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+        footer {
+            margin-top: auto;
+            background: #1a1a1a;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            font-size: 0.9em;
+        }
+        .footer-links {
+            margin-bottom: 10px;
+        }
+        .footer-links a {
+            color: #bbb;
+            text-decoration: none;
+            margin: 0 15px;
+            transition: color 0.3s;
+        }
+        .footer-links a:hover {
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav>
+        <div style="display: flex; align-items: center; gap: 10px;">
+            <img src="logo.png" alt="VD Logo" style="width: 35px; height: 35px; border-radius: 6px; object-fit: cover;">
+            <span style="font-size: 1.2em; font-weight: bold; color: #1e3c72; letter-spacing: 1px;">ViDUEVA</span>
+        </div>
+        <ul style="display: flex; list-style: none; gap: 25px; margin: 0; padding: 0;">
+            <li><a href="index.html" style="text-decoration: none; color: #333; font-weight: 500;">Home</a></li>
+            <li><a href="about.html" style="text-decoration: none; color: #333; font-weight: 500;">About Us</a></li>
+            <li><a href="support.html" style="text-decoration: none; color: #1e3c72; font-weight: bold;">Support</a></li>
+        </ul>
+    </nav>
+
+    <!-- Support / Contact Form Container -->
+    <div class="container">
+        <div class="section-title">Contact & Support</div>
+        <p>Have questions, feedback, or support inquiries regarding our apps? Fill out the form below and we will get back to you.</p>
+        <p><strong>Direct Email:</strong> support@vidueva.com</p>
+        
+        <!-- Google Apps Script Connected Form -->
+        <form id="contactForm" style="display: flex; flex-direction: column; gap: 15px; margin-top: 20px;">
+            
+            <div style="display: flex; flex-direction: column; text-align: left;">
+                <label for="Name" style="font-weight: 500; margin-bottom: 5px; color: #333;">Your Name</label>
+                <input type="text" id="Name" name="Name" required style="padding: 12px; border: 1px solid #ccc; border-radius: 6px; font-size: 1em;">
+            </div>
+
+            <div style="display: flex; flex-direction: column; text-align: left;">
+                <label for="Email" style="font-weight: 500; margin-bottom: 5px; color: #333;">Your Email</label>
+                <input type="email" id="Email" name="Email" required style="padding: 12px; border: 1px solid #ccc; border-radius: 6px; font-size: 1em;">
+            </div>
+
+            <div style="display: flex; flex-direction: column; text-align: left;">
+                <label for="Type" style="font-weight: 500; margin-bottom: 5px; color: #333;">Inquiry Type</label>
+                <select id="Type" name="Type" style="padding: 12px; border: 1px solid #ccc; border-radius: 6px; font-size: 1em; background: white;">
+                    <option value="Support">Support</option>
+                    <option value="Business">Business</option>
+                    <option value="Feedback">Feedback</option>
+                </select>
+            </div>
+
+            <div style="display: flex; flex-direction: column; text-align: left;">
+                <label for="Message" style="font-weight: 500; margin-bottom: 5px; color: #333;">Message</label>
+                <textarea id="Message" name="Message" rows="5" required style="padding: 12px; border: 1px solid #ccc; border-radius: 6px; font-size: 1em; resize: vertical;"></textarea>
+            </div>
+
+            <button type="submit" id="submitBtn" style="background-color: #1e3c72; color: white; padding: 12px 20px; border: none; border-radius: 6px; font-size: 1em; font-weight: bold; cursor: pointer; transition: background 0.3s;">Send Message</button>
+            <p id="formStatus" style="font-weight: 500; text-align: center; margin-top: 5px;"></p>
+        </form>
+    </div>
+
+    <!-- Script to handle form submission securely -->
+    <script>
+      const scriptURL = 'https://script.google.com/macros/s/AKfycbxtW2pd7hPcJQHQLr7sGz7uSiHcPlQrb1pQkVbV1AvscXBeeITgq323QD_er4QzC5t-AA/exec';
+      const form = document.getElementById('contactForm');
+      const btn = document.getElementById('submitBtn');
+      const statusMsg = document.getElementById('formStatus');
+
+      form.addEventListener('submit', e => {
+        e.preventDefault();
+        btn.disabled = true;
+        btn.textContent = 'Sending...';
+        statusMsg.style.color = '#333';
+        statusMsg.textContent = 'Please wait...';
+
+        fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+          .then(response => {
+            btn.disabled = false;
+            btn.textContent = 'Send Message';
+            statusMsg.style.color = '#28a745';
+            statusMsg.textContent = 'Thank you! Your message has been sent successfully.';
+            form.reset();
+          })
+          .catch(error => {
+            btn.disabled = false;
+            btn.textContent = 'Send Message';
+            statusMsg.style.color = '#dc3545';
+            statusMsg.textContent = 'Error! Please try again later.';
+          });
+      });
+    </script>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-links">
+            <a href="privacy.html">Privacy Policy</a>
+            <a href="terms.html">Terms of Service</a>
+            <a href="support.html">Contact Support</a>
+        </div>
+        <p>&copy; 2026 ViDUEVA Labs. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
