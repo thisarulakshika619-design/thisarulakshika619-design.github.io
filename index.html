@@ -262,14 +262,72 @@
         <!-- [SECTION 3]: CONTACT US (සම්බන්ධ වීමට) -->
         <!-- ======================================================== -->
         <div id="contact" class="section-box">
-            <div class="section-title">Contact Us</div>
-            <p>
-                Have questions, feedback, or support inquiries regarding our apps? Feel free to reach out to us.
-            </p>
-            <p><strong>Email:</strong> support@vidueva.com *(ඔබේ ඊමේල් ලිපිනය මෙහි යොදන්න)*</p>
-        </div>
+        <div class="section-title">Contact Us</div>
+        <p>Have questions, feedback, or support inquiries regarding our apps? Feel free to reach out to us.</p>
+        <p><strong>Email:</strong> support@vidueva.com</p>
+        
+        <!-- Google Apps Script Connected Form -->
+        <form id="contactForm" style="display: flex; flex-direction: column; gap: 15px; margin-top: 20px;">
+            
+            <div style="display: flex; flex-direction: column; text-align: left;">
+                <label for="Name" style="font-weight: 500; margin-bottom: 5px; color: #333;">Your Name</label>
+                <input type="text" id="Name" name="Name" required style="padding: 12px; border: 1px solid #ccc; border-radius: 6px; font-size: 1em;">
+            </div>
 
+            <div style="display: flex; flex-direction: column; text-align: left;">
+                <label for="Email" style="font-weight: 500; margin-bottom: 5px; color: #333;">Your Email</label>
+                <input type="email" id="Email" name="Email" required style="padding: 12px; border: 1px solid #ccc; border-radius: 6px; font-size: 1em;">
+            </div>
+
+            <div style="display: flex; flex-direction: column; text-align: left;">
+                <label for="Type" style="font-weight: 500; margin-bottom: 5px; color: #333;">Inquiry Type</label>
+                <select id="Type" name="Type" style="padding: 12px; border: 1px solid #ccc; border-radius: 6px; font-size: 1em; background: white;">
+                    <option value="Support">Support</option>
+                    <option value="Business">Business</option>
+                    <option value="Feedback">Feedback</option>
+                </select>
+            </div>
+
+            <div style="display: flex; flex-direction: column; text-align: left;">
+                <label for="Message" style="font-weight: 500; margin-bottom: 5px; color: #333;">Message</label>
+                <textarea id="Message" name="Message" rows="5" required style="padding: 12px; border: 1px solid #ccc; border-radius: 6px; font-size: 1em; resize: vertical;"></textarea>
+            </div>
+
+            <button type="submit" id="submitBtn" style="background-color: #1e3c72; color: white; padding: 12px 20px; border: none; border-radius: 6px; font-size: 1em; font-weight: bold; cursor: pointer; transition: background 0.3s;">Send Message</button>
+            <p id="formStatus" style="font-weight: 500; text-align: center; margin-top: 5px;"></p>
+        </form>
     </div>
+
+    <!-- Script to handle form submission securely -->
+    <script>
+      const scriptURL = 'https://script.google.com/macros/s/AKfycbxtW2pd7hPcJQHLr7sGz7uSiHcPlQrb1pQkVb1AvscXBeeITgq323QD_er4QzC5t-AA/exec';
+      const form = document.getElementById('contactForm');
+      const btn = document.getElementById('submitBtn');
+      const statusMsg = document.getElementById('formStatus');
+
+      form.addEventListener('submit', e => {
+        e.preventDefault();
+        btn.disabled = true;
+        btn.textContent = 'Sending...';
+        statusMsg.style.color = '#333';
+        statusMsg.textContent = 'Please wait...';
+
+        fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+          .then(response => {
+            btn.disabled = false;
+            btn.textContent = 'Send Message';
+            statusMsg.style.color = '#28a745';
+            statusMsg.textContent = 'Thank you! Your message has been sent successfully.';
+            form.reset();
+          })
+          .catch(error => {
+            btn.disabled = false;
+            btn.textContent = 'Send Message';
+            statusMsg.style.color = '#dc3545';
+            statusMsg.textContent = 'Error! Please try again later.';
+          });
+      });
+    </script>
 
 
     <!-- ======================================================== -->
