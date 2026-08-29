@@ -55,7 +55,7 @@
             background: #2a5298;
         }
 
-        /* MOBILE RESPONSIVE STYLES (ෆෝන් වලට හැඩගැසෙන ආකාරය) */
+        /* MOBILE RESPONSIVE STYLES */
         @media (max-width: 768px) {
             nav {
                 padding: 15px 20px !important;
@@ -69,7 +69,7 @@
                 padding: 40px 15px !important;
             }
             header h1 {
-                font-size: 1.6em !important;
+                font-size: 1.8em !important;
             }
             .container {
                 margin: 20px auto;
@@ -98,19 +98,28 @@
 
     <!-- HEADER / HERO -->
     <header style="background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%); color: white; text-align: center; padding: 60px 20px; box-shadow: inset 0 -5px 15px rgba(0,0,0,0.1);">
-        <div class="logo-container" style="margin-bottom: 15px;">
-            <img src="logo.png" alt="VD Logo" style="width: 90px; height: 90px; border-radius: 14px; object-fit: cover; box-shadow: 0 8px 25px rgba(0,0,0,0.3); border: 3px solid rgba(255,255,255,0.2);">
+        <!-- 4. New Lab Logo -->
+        <div class="logo-container" style="margin-bottom: 20px;">
+            <img src="lab-logo.png" alt="ViDUEVA Lab Logo" style="max-width: 280px; width: 100%; height: auto; border-radius: 12px; object-fit: contain; box-shadow: 0 8px 25px rgba(0,0,0,0.3); background: rgba(255,255,255,0.05); padding: 10px; border: 2px solid rgba(255,255,255,0.15);">
         </div>
-        <h1 style="font-size: 2em; font-weight: 700; margin-bottom: 10px; letter-spacing: 1px;">ViDUEVA Research & Development Lab</h1>
-        <p style="font-size: 1.1em; opacity: 0.9; max-width: 600px; margin: 0 auto;">Innovating next-generation smart tools, internal experiments, and advanced technological solutions.</p>
+        
+        <!-- 1. Only "ViDUEVA Lab" -->
+        <h1 style="font-size: 2.5em; font-weight: 700; margin-bottom: 12px; letter-spacing: 1px;">ViDUEVA Lab</h1>
+        
+        <!-- 2. Optimized Slogan based on real data -->
+        <p style="font-size: 1.15em; opacity: 0.95; max-width: 680px; margin: 0 auto; line-height: 1.5;">Crafting high-quality offline-first mobile applications for Google Play Store with absolute user privacy, while engineering next-generation smart digital solutions.</p>
     </header>
 
     <!-- MAIN CONTAINER -->
     <div class="container">
+        <!-- 3. Structured Content Box based on About & Privacy context -->
         <div class="section-box">
-            <div class="section-title">🧪 Welcome to ViDUEVA Lab</div>
-            <p>This is the official experimental hub of ViDUEVA. Here we test cutting-edge features, prototype future applications, and build specialized scripts before releasing them to the main ecosystem.</p>
-            <p style="margin-top: 15px; color: #555;">Stay tuned for upcoming experimental projects, open-source code snippets, and advanced developer logs!</p>
+            <div class="section-title">🧪 Our Core Focus & Vision</div>
+            <p>ViDUEVA Labs is an emerging digital software development studio. At present, our primary focus centers on building reliable, <strong>offline-first mobile applications</strong> for the Google Play Store that prioritize absolute user privacy and high device efficiency.</p>
+            
+            <p style="margin-top: 15px;">While keeping local data strictly secure on your personal device, our continuous creation is supported through non-intrusive banner advertisements (AdMob). Looking ahead, we are scaling up to introduce advanced online platforms, user authentication features, cloud upgrades, and custom web solutions.</p>
+            
+            <p style="margin-top: 15px; color: #555;">Whether you are using our current mobile utilities or exploring our upcoming ecosystem, we remain firmly committed to technical excellence, transparency, and smart solutions for everyday life.</p>
             
             <a href="index.html" class="back-btn">&larr; Back to Main Home</a>
         </div>
