@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unit Converter V Pro - ViDUEVA Labs</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        body {
+            background-color: #f4f7f6;
+            color: #333;
+            line-height: 1.6;
+        }
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 40px;
+            background: #ffffff;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        .brand-container {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+        }
+        .brand-container span {
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #1e3c72;
+            letter-spacing: 1px;
+        }
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+            align-items: center;
+        }
+        nav ul li a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            font-size: 0.95em;
+            transition: color 0.3s;
+        }
+        nav ul li a:hover {
+            color: #2a5298;
+        }
+        .header-hero {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            text-align: center;
+            padding: 60px 20px;
+        }
+        .header-hero h1 {
+            font-size: 2.2em;
+            margin-bottom: 12px;
+            font-weight: 700;
+        }
+        .header-hero p {
+            font-size: 1.1em;
+            max-width: 700px;
+            margin: 0 auto;
+            opacity: 0.95;
+            line-height: 1.5;
+        }
+        .container {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+        .section-box {
+            background: #ffffff;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            border-left: 5px solid #2a5298;
+            margin-bottom: 40px;
+        }
+        .section-title {
+            font-size: 1.5em;
+            font-weight: bold;
+            color: #1e3c72;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #f0f0f0;
+            padding-bottom: 10px;
+        }
+        p {
+            margin-bottom: 15px;
+            color: #444;
+        }
+        ul.feature-list {
+            list-style: disc;
+            margin-left: 20px;
+            margin-bottom: 20px;
+            color: #444;
+        }
+        ul.feature-list li {
+            margin-bottom: 8px;
+        }
+        .badge-btn {
+            display: inline-block;
+            padding: 12px 24px;
+            background: #1e3c72;
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 600;
+            margin-top: 15px;
+            transition: background 0.3s;
+        }
+        .badge-btn:hover {
+            background: #2a5298;
+        }
+        footer {
+            text-align: center;
+            padding: 30px;
+            background: #1e3c72;
+            color: white;
+            margin-top: 60px;
+            font-size: 0.9em;
+        }
+        @media (max-width: 768px) {
+            nav { padding: 15px 20px; }
+            nav ul { display: none; } /* Mobile responsiveness simplified */
+            .section-box { padding: 20px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAVIGATION BAR -->
+    <nav>
+        <a href="vidueva-lab.html" class="brand-container">
+            <span style="font-size: 1.2em; font-weight: bold; color: #1e3c72;">ViDUEVA Labs</span>
+        </a>
+        <ul>
+            <li><a href="vidueva-lab.html">ViDUEVA Lab</a></li>
+            <li><a href="#about-app">About App</a></li>
+            <li><a href="#privacy-policy">Privacy Policy</a></li>
+            <li><a href="vidueva-lab.html#contact-lab">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- HEADER HERO -->
+    <header class="header-hero">
+        <h1>Unit Converter V Pro</h1>
+        <p>"A high-performance, precision-engineered offline unit converter app for everyday calculations. Fully optimized with a clean Jetpack Compose UI and secure AdMob integration."</p>
+        <a href="#" class="badge-btn" style="background: #333; cursor: default;">Coming Soon on Google Play</a>
+    </header>
+
+    <!-- MAIN CONTAINER -->
+    <div class="container">
+
+        <!-- 1. APP DETAILS & OVERVIEW -->
+        <div class="section-box" id="about-app">
+            <div class="section-title">About Us — Unit Converter V Pro</div>
+            <p><strong>Developed by:</strong> ViDUEVA Labs</p>
+            <p><strong>Version:</strong> 1.0.0 / Pro</p>
+            
+            <h3 style="color: #1e3c72; margin: 20px 0 10px 0;">Welcome to Unit Converter V Pro</h3>
+            <p>Unit Converter V Pro is a high-performance, precision-engineered utility application developed exclusively by ViDUEVA Labs. Our mission is to provide clean, fast, and reliable digital tools that simplify everyday calculations for users worldwide, without compromising their device performance or privacy.</p>
+            
+            <h3 style="color: #1e3c72; margin: 20px 0 10px 0;">About ViDUEVA Labs</h3>
+            <p>ViDUEVA Labs is an emerging software and application development studio dedicated to crafting innovative, user-friendly, and smart digital solutions. Our core focus revolves around developing high-quality mobile applications for the Google Play Store, optimized with modern standards and non-intrusive integrations (such as Google AdMob) to support continuous creation, free accessibility, and growth.</p>
+            
+            <h3 style="color: #1e3c72; margin: 20px 0 10px 0;">Full Description / About the App</h3>
+            <p>Unit Converter V Pro is a modern, lightweight, and lightning-fast Android utility application built using Jetpack Compose. Designed with a clean and intuitive user interface, it provides instant and accurate conversions for your daily calculation needs without requiring an active internet connection.</p>
+            <p>Whether you are a student, engineer, or everyday user, this app makes converting units effortless across multiple essential categories.</p>
+            
+            <h3 style="color: #1e3c72; margin: 20px 0 10px 0;">Key Features & Categories Supported</h3>
+            <ul class="feature-list">
+                <li><strong>Weight & Mass:</strong> Seamlessly convert between Kilograms (kg), Pounds (lbs), Grams (g), Ounces (oz), and Stone (st).</li>
+                <li><strong>Length & Distance:</strong> Quick conversions for Kilometers (km), Miles (mi), Meters (m), Feet (ft), Inches (in), and Centimeters (cm).</li>
+                <li><strong>Temperature:</strong> Accurate conversions between Celsius (°C), Fahrenheit (°F), and Kelvin (K).</li>
+                <li><strong>Volume & Liquid:</strong> Convert Liters (L), Milliliters (mL), and Gallons (gal) with ease.</li>
+                <li><strong>Data Storage:</strong> Handy conversions for Megabytes (MB), Gigabytes (GB), Kilobytes (KB), and Terabytes (TB).</li>
+            </ul>
+
+            <h3 style="color: #1e3c72; margin: 20px 0 10px 0;">Privacy & Offline-First Architecture</h3>
+            <ul class="feature-list">
+                <li><strong>100% Offline Capability:</strong> The app functions entirely locally on your device. No personal data, inputs, or calculation histories are ever uploaded or stored on any external servers.</li>
+                <li><strong>Smart Local Preferences:</strong> Utilizes local device storage (SharedPreferences) to remember your last-used categories and preferred units for a smoother user experience.</li>
+                <li><strong>Secure & Safe:</strong> Designed with strict adherence to modern Android guidelines and secure, non-intrusive AdMob advertising integration.</li>
+            </ul>
+
+            <h3 style="color: #1e3c72; margin: 20px 0 10px 0;">Transparency & Support</h3>
+            <p>To keep this application completely free and accessible to everyone, Unit Converter V Pro is supported by non-intrusive advertisements managed securely through Google AdMob, complying fully with Google Play developer policies.</p>
+            <p>If you have any feedback, feature requests, or support inquiries, you can reach out to us officially through our developer channels or visit our official studio portfolio.</p>
+            <p><strong>Thank you for choosing Unit Converter V Pro by ViDUEVA Labs!</strong></p>
+        </div>
+
+        <!-- 2. PRIVACY POLICY -->
+        <div class="section-box" id="privacy-policy">
+            <div class="section-title">PRIVACY POLICY — Unit Converter V Pro</div>
+            <p><strong>Developer / Entity:</strong> ViDUEVA Labs</p>
+            <p><strong>Effective Date:</strong> August 28, 2026</p>
+            
+            <p style="margin-top: 15px;">At ViDUEVA Labs, we respect your privacy and are fully committed to protecting your data while you use Unit Converter V Pro. This Privacy Policy explains how information is handled within this application.</p>
+            
+            <h3 style="color: #1e3c72; margin: 20px 0 10px 0;">1. Data Collection & Offline Functionality</h3>
+            <p><strong>Local Processing:</strong> Unit Converter V Pro is designed to operate entirely offline.</p>
+            <p><strong>Local Storage:</strong> All user preferences, selected conversion categories, "From" and "To" units, and input configurations are stored exclusively on your personal device using local storage mechanisms (such as SharedPreferences).</p>
+            <p><strong>No Server Storage:</strong> We do not collect, transmit, upload, or store any of your personal conversion data, inputs, or local device files on external servers.</p>
+            
+            <h3 style="color: #1e3c72; margin: 20px 0 10px 0;">2. Third-Party Advertising (Google AdMob)</h3>
+            <p>To keep Unit Converter V Pro free for everyone, we integrate third-party advertisements via Google AdMob.</p>
+            <p><strong>Ad Personalization & Cookies:</strong> Google AdMob may use device identifiers, advertising IDs, and cookies to serve contextual or personalized ads based on your interactions with this app and other applications across the internet.</p>
+            <p><strong>User Controls:</strong> You can manage or reset your advertising ID preferences at any time through your device's system settings (Google Settings > Ads).</p>
+            <p><strong>Ad Network Policies:</strong> For more details on how Google handles advertising data, please review Google's Privacy & Terms.</p>
+            
+            <h3 style="color: #1e3c72; margin: 20px 0 10px 0;">3. Data Confidentiality & Sharing</h3>
+            <p><strong>No Sale of Data:</strong> ViDUEVA Labs strictly maintains a no-sale policy. We never sell, trade, rent, or lease any user information or device data to third parties, advertisers, or external organizations.</p>
+            <p><strong>Legal Compliance:</strong> Information may be disclosed only if required by applicable laws, legal processes, or official governmental regulations to protect the rights and safety of ViDUEVA Labs and our users.</p>
+            
+            <h3 style="color: #1e3c72; margin: 20px 0 10px 0;">4. Children’s Privacy</h3>
+            <p>Unit Converter V Pro is intended for a general audience and does not knowingly collect or solicit any personal information from children under the age of 13.</p>
+            
+            <h3 style="color: #1e3c72; margin: 20px 0 10px 0;">5. Changes to This Policy</h3>
+            <p>We may update this Privacy Policy from time to time to reflect new features, technological updates, or changes in regulatory requirements. Any updates will be included in our application releases or official update notices.</p>
+            
+            <h3 style="color: #1e3c72; margin: 20px 0 10px 0;">6. Contact Us</h3>
+            <p>If you have any questions, legal inquiries, or concerns regarding this Privacy Policy or our application practices, you may reach out to us officially through the ViDUEVA Labs developer contact details provided on our Google Play Console developer profile.</p>
+        </div>
+
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>&copy; 2026 ViDUEVA Labs. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
