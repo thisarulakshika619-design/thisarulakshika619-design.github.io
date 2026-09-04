@@ -132,8 +132,18 @@
         border-top: 1px solid rgba(255,255,255,0.1);
     }
         @media (max-width: 768px) {
-            nav { padding: 15px 20px; }
-            nav ul { display: none; } /* Mobile responsiveness simplified */
+            nav { 
+                padding: 12px 15px; 
+                flex-direction: column;
+                gap: 10px;
+            }
+            nav ul { 
+                display: flex; 
+                gap: 15px; 
+            }
+            nav ul li a {
+                font-size: 0.85em; 
+            }
             .section-box { padding: 20px; }
         }
     </style>
