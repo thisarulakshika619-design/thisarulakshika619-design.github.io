@@ -57,28 +57,34 @@
 
         /* MOBILE RESPONSIVE STYLES */
         @media (max-width: 768px) {
-            nav {
-                padding: 15px 20px !important;
-                flex-direction: column;
-                gap: 10px;
-            }
-            nav ul {
-                gap: 15px !important;
-            }
-            header {
-                padding: 40px 15px !important;
-            }
-            header h1 {
-                font-size: 1.8em !important;
-            }
-            .container {
-                margin: 20px auto;
-                padding: 0 10px;
-            }
-            .section-box {
-                padding: 20px;
-            }
-        }
+    nav { 
+        padding: 12px 10px !important; 
+        flex-direction: column;
+        gap: 8px;
+    }
+    nav ul { 
+        display: flex !important; 
+        gap: 10px !important; 
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    nav ul li a {
+        font-size: 0.78em !important; /* ෆෝන් එකේ ලින්ක්ස් ගොඩක් තියෙන නිසා අකුරු ටිකක් පොඩි කරයි */
+    }
+    header {
+        padding: 40px 15px !important;
+    }
+    header h1 {
+        font-size: 1.8em !important;
+    }
+    .container {
+        margin: 20px auto;
+        padding: 0 10px;
+    }
+    .section-box { 
+        padding: 20px; 
+    }
+}
     </style>
 </head>
 <body>
